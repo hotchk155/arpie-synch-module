@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.4">
+<eagle version="6.6.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -13786,6 +13786,8 @@ In this library the device names are the same as the pin names of the symbols, t
 <part name="C2" library="rcl" deviceset="C-EU" device="025-030X050"/>
 <part name="U$1" library="jason_eagle6" deviceset="TRUCONNECTJACK" device=""/>
 <part name="U$2" library="jason_eagle6" deviceset="TRUCONNECTJACK" device=""/>
+<part name="SUPPLY4" library="supply2" deviceset="+5V" device=""/>
+<part name="GND13" library="SparkFun" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -13889,6 +13891,8 @@ plugged into input socket</text>
 <instance part="C2" gate="G$1" x="144.78" y="5.08" rot="R90"/>
 <instance part="U$1" gate="G$1" x="231.14" y="40.64"/>
 <instance part="U$2" gate="G$1" x="231.14" y="15.24"/>
+<instance part="SUPPLY4" gate="+5V" x="111.76" y="119.38"/>
+<instance part="GND13" gate="1" x="144.78" y="93.98"/>
 </instances>
 <busses>
 </busses>
@@ -13901,6 +13905,7 @@ plugged into input socket</text>
 <wire x1="172.72" y1="45.72" x2="205.74" y2="45.72" width="0.1524" layer="91"/>
 <pinref part="U$1" gate="G$1" pin="SLEEVE"/>
 <wire x1="205.74" y1="45.72" x2="210.82" y2="45.72" width="0.1524" layer="91"/>
+<junction x="210.82" y="45.72"/>
 </segment>
 <segment>
 <pinref part="GND8" gate="1" pin="GND"/>
@@ -13909,6 +13914,7 @@ plugged into input socket</text>
 <wire x1="172.72" y1="20.32" x2="205.74" y2="20.32" width="0.1524" layer="91"/>
 <pinref part="U$2" gate="G$1" pin="SLEEVE"/>
 <wire x1="205.74" y1="20.32" x2="210.82" y2="20.32" width="0.1524" layer="91"/>
+<junction x="210.82" y="20.32"/>
 </segment>
 <segment>
 <pinref part="R3" gate="G$1" pin="2"/>
@@ -13934,6 +13940,12 @@ plugged into input socket</text>
 <wire x1="152.4" y1="-5.08" x2="152.4" y2="-2.54" width="0.1524" layer="91"/>
 <junction x="152.4" y="-2.54"/>
 </segment>
+<segment>
+<pinref part="GND" gate="G$1" pin="1"/>
+<wire x1="152.4" y1="104.14" x2="144.78" y2="104.14" width="0.1524" layer="91"/>
+<wire x1="144.78" y1="104.14" x2="144.78" y2="96.52" width="0.1524" layer="91"/>
+<pinref part="GND13" gate="1" pin="GND"/>
+</segment>
 </net>
 <net name="N$3" class="0">
 <segment>
@@ -13958,6 +13970,9 @@ plugged into input socket</text>
 <wire x1="205.74" y1="30.48" x2="210.82" y2="30.48" width="0.1524" layer="91"/>
 <pinref part="U$2" gate="G$1" pin="TIP_NC"/>
 <wire x1="205.74" y1="27.94" x2="210.82" y2="27.94" width="0.1524" layer="91"/>
+<junction x="210.82" y="55.88"/>
+<junction x="210.82" y="30.48"/>
+<junction x="210.82" y="27.94"/>
 </segment>
 </net>
 <net name="N$4" class="0">
@@ -13973,6 +13988,7 @@ plugged into input socket</text>
 <wire x1="172.72" y1="53.34" x2="205.74" y2="53.34" width="0.1524" layer="91"/>
 <pinref part="U$1" gate="G$1" pin="TIP_NC"/>
 <wire x1="205.74" y1="53.34" x2="210.82" y2="53.34" width="0.1524" layer="91"/>
+<junction x="210.82" y="53.34"/>
 </segment>
 </net>
 <net name="N$5" class="0">
@@ -14005,6 +14021,8 @@ plugged into input socket</text>
 <wire x1="157.48" y1="48.26" x2="205.74" y2="48.26" width="0.1524" layer="91"/>
 <pinref part="U$1" gate="G$1" pin="RING_NC"/>
 <wire x1="205.74" y1="48.26" x2="210.82" y2="48.26" width="0.1524" layer="91"/>
+<junction x="210.82" y="48.26"/>
+<junction x="157.48" y="60.96"/>
 </segment>
 </net>
 <net name="N$11" class="0">
@@ -14020,6 +14038,7 @@ plugged into input socket</text>
 <wire x1="154.94" y1="50.8" x2="205.74" y2="50.8" width="0.1524" layer="91"/>
 <pinref part="U$1" gate="G$1" pin="RING"/>
 <wire x1="205.74" y1="50.8" x2="210.82" y2="50.8" width="0.1524" layer="91"/>
+<junction x="210.82" y="50.8"/>
 </segment>
 </net>
 <net name="N$12" class="0">
@@ -14047,6 +14066,12 @@ plugged into input socket</text>
 <pinref part="SUPPLY3" gate="+5V" pin="+5V"/>
 <wire x1="139.7" y1="5.08" x2="139.7" y2="7.62" width="0.1524" layer="91"/>
 <junction x="139.7" y="5.08"/>
+</segment>
+<segment>
+<pinref part="VCC" gate="G$1" pin="1"/>
+<wire x1="134.62" y1="111.76" x2="111.76" y2="111.76" width="0.1524" layer="91"/>
+<wire x1="111.76" y1="111.76" x2="111.76" y2="116.84" width="0.1524" layer="91"/>
+<pinref part="SUPPLY4" gate="+5V" pin="+5V"/>
 </segment>
 </net>
 <net name="N$14" class="0">
@@ -14186,42 +14211,40 @@ plugged into input socket</text>
 <approved hash="101,1,134.62,104.14,VCC2,1,,,,"/>
 <approved hash="101,1,152.4,149.86,GND1,1,,,,"/>
 <approved hash="101,1,190.5,149.86,PB3,1,,,,"/>
-<approved hash="101,1,152.4,104.14,GND,1,,,,"/>
-<approved hash="101,1,134.62,111.76,VCC,1,,,,"/>
 <approved hash="104,1,124.46,63.5,IC1P,VSS,GND,,,"/>
 <approved hash="104,1,124.46,78.74,IC1P,VDD,+5V,,,"/>
-<approved hash="115,1,85.6301,149.86,LD3,,,,,"/>
-<approved hash="115,1,85.5031,142.24,LD2,,,,,"/>
-<approved hash="115,1,64.9064,149.86,ENA,,,,,"/>
-<approved hash="115,1,103.791,149.86,LD1,,,,,"/>
-<approved hash="115,1,65.6911,142.24,LD4,,,,,"/>
-<approved hash="115,1,65.6241,134.62,KS2,,,,,"/>
-<approved hash="115,1,174.574,149.86,UN2,,,,,"/>
-<approved hash="115,1,85.5916,134.62,SW1,,,,,"/>
-<approved hash="115,1,103.851,142.24,KS1,,,,,"/>
-<approved hash="115,1,152.637,113.161,GND5,,,,,"/>
-<approved hash="115,1,65.4525,127.258,DAT,,,,,"/>
-<approved hash="115,1,103.526,134.62,CLK,,,,,"/>
-<approved hash="115,1,177.563,138.299,UN1,,,,,"/>
-<approved hash="115,1,152.637,120.781,GND6,,,,,"/>
-<approved hash="115,1,152.637,128.401,GND2,,,,,"/>
-<approved hash="115,1,152.637,136.021,GND3,,,,,"/>
-<approved hash="115,1,152.637,143.641,GND4,,,,,"/>
-<approved hash="115,1,134.857,97.9212,VCC1,,,,,"/>
-<approved hash="115,1,134.857,105.541,VCC2,,,,,"/>
-<approved hash="115,1,152.637,151.261,GND1,,,,,"/>
-<approved hash="115,1,190.263,117.979,PC5,,,,,"/>
-<approved hash="115,1,190.263,128.139,PC4,,,,,"/>
-<approved hash="115,1,190.263,138.299,PC0,,,,,"/>
-<approved hash="115,1,190.779,151.261,PB3,,,,,"/>
-<approved hash="115,1,152.637,105.541,GND,,,,,"/>
-<approved hash="115,1,134.857,113.161,VCC,,,,,"/>
-<approved hash="115,1,136.291,41.91,C1,,,,,"/>
-<approved hash="115,1,144.78,23.8548,R5,,,,,"/>
-<approved hash="115,1,63.8217,16.51,INT_CLK,,,,,"/>
-<approved hash="115,1,88.5783,16.2697,EXT_CLK,,,,,"/>
-<approved hash="115,1,146.05,-1.18196,C3,,,,,"/>
-<approved hash="115,1,146.05,6.7513,C2,,,,,"/>
+<approved hash="113,1,85.6301,149.86,LD3,,,,,"/>
+<approved hash="113,1,85.5031,142.24,LD2,,,,,"/>
+<approved hash="113,1,64.9064,149.86,ENA,,,,,"/>
+<approved hash="113,1,103.791,149.86,LD1,,,,,"/>
+<approved hash="113,1,65.6911,142.24,LD4,,,,,"/>
+<approved hash="113,1,65.6241,134.62,KS2,,,,,"/>
+<approved hash="113,1,174.574,149.86,UN2,,,,,"/>
+<approved hash="113,1,85.5916,134.62,SW1,,,,,"/>
+<approved hash="113,1,103.851,142.24,KS1,,,,,"/>
+<approved hash="113,1,152.637,113.161,GND5,,,,,"/>
+<approved hash="113,1,65.4525,127.258,DAT,,,,,"/>
+<approved hash="113,1,103.526,134.62,CLK,,,,,"/>
+<approved hash="113,1,177.563,138.299,UN1,,,,,"/>
+<approved hash="113,1,152.637,120.781,GND6,,,,,"/>
+<approved hash="113,1,152.637,128.401,GND2,,,,,"/>
+<approved hash="113,1,152.637,136.021,GND3,,,,,"/>
+<approved hash="113,1,152.637,143.641,GND4,,,,,"/>
+<approved hash="113,1,134.857,97.9212,VCC1,,,,,"/>
+<approved hash="113,1,134.857,105.541,VCC2,,,,,"/>
+<approved hash="113,1,152.637,151.261,GND1,,,,,"/>
+<approved hash="113,1,190.263,117.979,PC5,,,,,"/>
+<approved hash="113,1,190.263,128.139,PC4,,,,,"/>
+<approved hash="113,1,190.263,138.299,PC0,,,,,"/>
+<approved hash="113,1,190.779,151.261,PB3,,,,,"/>
+<approved hash="113,1,152.637,105.541,GND,,,,,"/>
+<approved hash="113,1,134.857,113.161,VCC,,,,,"/>
+<approved hash="113,1,136.291,41.91,C1,,,,,"/>
+<approved hash="113,1,144.78,23.8548,R5,,,,,"/>
+<approved hash="113,1,63.8217,16.51,INT_CLK,,,,,"/>
+<approved hash="113,1,88.5783,16.2697,EXT_CLK,,,,,"/>
+<approved hash="113,1,146.05,-1.18196,C3,,,,,"/>
+<approved hash="113,1,146.05,6.7513,C2,,,,,"/>
 </errors>
 </schematic>
 </drawing>
